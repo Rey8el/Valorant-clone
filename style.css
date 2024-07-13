@@ -77,7 +77,7 @@ header ul li a {
 }
 
 header .logo {
-    font-family: 'Valorant';
+    font-family: sans-serif;
     font-size: 3rem;
     position: absolute;
     margin: 0;

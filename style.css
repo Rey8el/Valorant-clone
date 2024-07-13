@@ -1,0 +1,622 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #7E252D;
+}
+
+header {
+    display: flex;
+    
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    position: relative; /* Relative positioning to position nav absolutely */
+    overflow: hidden; /* Ensure no overflow */
+    align-items: center;
+    justify-content: center;
+}
+
+#main-banner{
+    height: 100%;
+    width: 100%;
+}
+header nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Darker semi-transparent background */
+    padding: 1rem 0;
+    z-index: 4; /* Ensure nav is above other content */
+}
+
+header:hover {
+    background-position: center 10%; /* Adjust vertical position for parallax effect */
+    transition: background-position 0.3s ease; /* Smooth transition on hover */
+}
+
+
+header ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+header ul li {
+    margin: 0 1rem; /* Add space between the navigation items */
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.header-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 0; /* Ensure content is behind nav */
+}
+
+header .logo {
+    font-family: 'Valorant';
+    font-size: 3rem;
+    position: absolute;
+    margin: 0;
+    align-items: center center;
+    z-index:3;
+    color: #ffffff;
+}
+
+section {
+    padding: 2rem 0;
+
+}
+
+section#home {
+    position: relative; 
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(to bottom, #353535,#F84858);
+    color: #fd0000; 
+    text-align: center;
+    overflow: hidden; 
+    height: auto; 
+}
+
+section#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    z-index: 1; 
+}
+
+
+
+section#home h2 {
+    margin-top: 20%;
+    font-size: 3rem;
+}
+
+.container {
+    width: 100%;
+
+    margin-top: 20vh;
+    margin-bottom: 0vh;
+    overflow: hidden;
+}
+#section-header{
+    font-family: 'Mark Pro', Arial, sans-serif;;
+    font-size: 4vh;
+    position: absolute;
+    top: 10vh;
+    left: 15vh;
+    color: #ffffff;
+    z-index: 3;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.left-column {  
+    width: 55%;
+    max-width: 70%;
+}
+
+.right-column {
+    width: 100%; /* Adjust width as needed */
+    max-width: 30%; /* Adjust maximum width as needed */
+}
+
+
+
+.card-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    font-size: 48px;
+    opacity: 0; /* Initially hide the text */
+    transition: opacity 0.3s ease; /* Transition for opacity */
+    z-index: 2; /* Place text above the overlay */
+}
+
+
+
+.small-card {
+    width: 15rem;
+    padding: 10px;
+    height: 33.3vh; /* Adjust width as needed */
+    position: relative; /* Ensure relative positioning for absolute elements */
+}
+
+
+/* Specific styles for each card */
+
+.small-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.258); /* Black transparent overlay */
+    z-index: 2; /* Place overlay above the background image */
+}
+
+.small-card .card-body {
+    position: relative; /* Ensure positioning context for absolute positioning */
+    height: 100%; /* Ensure card-body takes full height of card */
+}
+
+.small-card .card-title {
+    position: absolute;
+    bottom: 10px; /* Adjust bottom position as needed */
+    left: 10px; /* Adjust left position as needed */
+    font-size: 24px;
+    font-weight: bold;
+    color: #fef8f8;
+    z-index: 3; /* Ensure title is above overlay */
+    padding: 10px; /* Optional: Add padding for better readability */
+    max-width: calc(100% - 40px); /* Limit width to fit within card minus padding */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+#card1 {
+    background-image: url('Images/Maps.jpg');
+    background-size: cover;
+    height: 33.3vh; /* Adjust height as needed */
+}
+
+#card2 {
+    background-image: url('Images/Agent.jpeg');
+    height: 33.3vh; /* Adjust height as needed */
+}
+
+#card3 {
+    background-image: url('Images/Fanarts.jpeg');
+    height: 33.3vh; /* Adjust height as needed */
+    background-size: cover;
+}
+
+#card4 {
+    background-image: url('Images/Entertainment.jpeg');
+    background-size: cover;
+    height: 33.3vh; /* Adjust height as needed */
+}
+
+.card {
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden; /* Ensure no overflow */
+    transition: background-size 0.3s ease, filter 0.3s ease; 
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.0); /* Black transparent overlay */
+    z-index: 1; /* Place the overlay above the background image */
+    transition: background-color 0.3s ease; /* Transition for opacity */
+}
+
+.card:hover::before {
+    background-color: rgba(0, 0, 0, 0.5); /* Darken the overlay on hover */
+}
+
+
+
+.card-title {
+    position: absolute;
+    bottom: 10px; /* Adjust bottom position */
+    left: 10px; /* Adjust left position */
+    font-size: 24px;
+    font-weight: bold;
+    color: #fef8f8;
+    z-index: 2; /* Ensure title is above overlay */
+    padding: 10px; /* Optional: Add padding for better readability */
+    max-width: calc(100% - 20px); /* Limit width to fit within card minus padding */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+    white-space: nowrap; /* Prevent text from wrapping */
+    opacity: 0; /* Hide text initially */
+    transition: opacity 0.3s ease; /* Fade-in transition */
+}
+
+.card:hover .card-title {
+    opacity: 1; /* Reveal the text on hover */
+}
+
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns with equal width */
+    gap: 5px; /* Gap between cards */
+}
+
+.big-card {
+    position: relative;
+    height: 70vh; /* Adjust height as needed */
+    padding: 20px;
+    overflow: hidden;
+    background-image: url('Images/champions.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.big-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.0); 
+    z-index: 1; 
+    transition: background-color 0.3s ease;
+}
+
+
+.big-card:hover .card-text {
+    opacity: 1; 
+}
+
+
+.service {
+    margin: 1rem 0;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin: 0.5rem 0 0.2rem;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+}
+
+form button {
+    padding: 0.7rem 1.5rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+
+#about {
+    position: relative;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(to bottom, #353535, #F84858);
+    color: #fd0000;
+    text-align: center;
+    overflow: hidden;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    z-index: 1;
+}
+
+
+.slider-wrapper {
+    overflow: hidden;
+    margin: 0 70px 55px;
+  }
+  
+  .card-list .card-item {
+    height: auto;
+    color: #f4f4f4;
+    font-family: 'Valorant';
+    user-select: none;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    backdrop-filter: blur(30px);
+    background: rgba(61, 16, 16, 0.299);
+    transition: color 0.3s ease, background 0.3s ease; /* Smooth transition for text and background color */
+  }
+  
+  .card-list .card-item:hover {
+    color: #ff6666; /* Reddish color */
+    background: rgba(35, 1, 1, 0.299); /* New background color */
+  }
+  
+  
+  
+  .card-list .card-item .user-image {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    margin-bottom: 40px;
+    padding: 4px;
+    transition: transform 0.3s ease; /* Smooth transition */
+  }
+  
+  .card-list .card-item .user-image:hover {
+    transform: scale(1.1); /* Increase size by 20% on hover */
+  }
+  
+
+
+  .slider-wrapper .swiper-pagination-bullet {
+    background: #7c3333;
+    height: 13px;
+    width: 13px;
+    opacity: 0.5;
+  }
+  
+  .slider-wrapper .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+  
+  .slider-wrapper .swiper-slide-button {
+    color: #fff;
+    margin-top: -55px;
+    transition: 0.2s ease;
+  }
+  
+  .slider-wrapper .swiper-slide-button:hover {
+    color: #8f2222;
+  }
+  
+  
+
+  
+section#services {
+    position: relative; /* Ensure positioning context for pseudo-element */
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(to bottom, #484848,#353535);
+    color: #fd0000; /* Text color */
+    text-align: center;
+    overflow: hidden; /* Ensure no overflow */
+    height: 100%; /* Set the height to 100% of the viewport height */
+}
+
+section#services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    z-index: 1; /* Place the overlay above the gradient background */
+}
+#banner{
+    width: 100%;
+    height: 100%;
+    transform: scale(1.1);
+}
+.riot-card {
+    background-color: #fff;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    overflow: hidden;
+    flex: 1 1 calc(50% - 20px); 
+    margin: 10px;
+    position: relative; 
+    max-width: calc(50% - 20px); 
+    z-index: 3;
+    transition: transform 0.3s ease-out, border-color 0.3s ease-out; 
+}
+
+.riot-card:hover {
+    border-color: #ffffff; /* Change border color on hover */
+}
+
+.riot-card .card-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black layer */
+    z-index: 1;
+    opacity: 0; /* Initially invisible */
+    transition: opacity 0.3s ease-out; /* Smooth transition with ease-out timing function */
+}
+
+.riot-card:hover .card-body::before {
+    opacity: 1; /* Make the overlay visible on hover */
+}
+
+
+#services .container .row{
+    padding-left: 100px;
+}
+
+
+@media (max-width: 480px) {
+    #main-banner{
+        height: 100vh;
+        object-fit: cover;
+    }
+    #section-header{
+        position: absolute;
+        top: 15vh;
+        left: 5vh;
+    }
+    .row{
+        margin: 5%;
+        
+    }
+    .left-column{
+        width: 100%;
+        max-width: 100%;
+    }
+    .big-card {
+        position: relative; /* Ensure positioning context for pseudo-element */
+        height: 34vh; /* Adjust height as needed */
+        
+        overflow: hidden; /* Ensure no overflow of pseudo-element */
+        background-image: url('Images/champions.jpeg');
+        background-repeat: no-repeat;
+        background-size: cover; /* Increase the size of the background image */
+        background-position: center;
+    }
+    #card1 ,#card2, #card3, #card4 {
+        height: 20vh;
+        width: 100%;
+    }
+    .card-grid {
+        display: block;
+    }
+    h1.card-text{
+        font-size: 4vh;
+    }
+    #services .container .row {
+        padding: 0%;
+    }
+    img#banner {
+        transform: scale(1.2);
+    }
+    .card-list .card-item .user-image {
+        height: auto;
+    }
+}
+
+
+@media (max-width: 1460px) {
+    .slider-wrapper {
+      margin: 0 10px 40px;
+    }
+  
+    .slider-wrapper .swiper-slide-button {
+      display: none;
+    }
+    .right-column {
+        width: 100%; /* Adjust to full width on smaller screens */
+        max-width: 100%;
+    }
+
+    .right-column {
+        margin-top: 20px; /* Add margin to separate from the left column */
+    }
+
+    #section-header{
+        position: absolute;
+        top: 15vh;
+        left: 5vh;
+    }
+    .row{
+        margin: 5%;
+        
+    }
+    .left-column{
+        width: 100%;
+        max-width: 100%;
+    }
+    .big-card {
+        position: relative; /* Ensure positioning context for pseudo-element */
+        height: 34vh; /* Adjust height as needed */
+        
+        overflow: hidden; /* Ensure no overflow of pseudo-element */
+        background-image: url('Images/champions.jpeg');
+        background-repeat: no-repeat;
+        background-size: cover; /* Increase the size of the background image */
+        background-position: center;
+    }
+    #card1 ,#card2, #card3, #card4 {
+        height: 20vh;
+        width: 100%;
+    }
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns with equal width */
+        gap: 5px;
+    }
+    h1.card-text{
+        font-size: 4vh;
+    }
+    #services .container .row {
+        padding: 0%;
+    }
+    img#banner {
+        transform: scale(1.2);
+    }
+    .card-list .card-item .user-image {
+        height: auto;
+    }
+
+  }

@@ -1,3 +1,10 @@
+*{
+    -ms-overflow-style: none;
+    scrollbar-width:  none;
+}
+::-webkit-scrollbar{
+    display: none;
+}
 @font-face {
     font-family: 'Valorant';
     src: url('fonts/VALORANT-Regular.woff2') format('woff2');
